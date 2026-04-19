@@ -1,0 +1,23 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    name: deploy
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      deployments: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: chrnorm/deployment-action@v2
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: '${{ github.token }}'
+          environment-url: http://my-app-url.com
+          environment: production
