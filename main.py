@@ -8,3 +8,4 @@ async def root():
 @app.get("/teste2")
 async def funcaoteste():
     return {"do balacobaco":"dyva"}
+print("Teste")
