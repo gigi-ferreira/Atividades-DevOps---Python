@@ -14,4 +14,4 @@ jobs:
         uses: Silleellie/pylint-github-action@v2.1
         with:
           lint-path: .
-          python-version: 3.10
+          python-version: '3.10'
