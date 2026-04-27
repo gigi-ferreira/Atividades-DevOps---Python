@@ -1,9 +1,11 @@
 from fastapi import FastAPI
-from starlette.responses import FileResponse
 
 app = FastAPI()
 
-@app.get("/foto")
-def get_foto():
-    return FileResponse("../imagem/cafe.jpeg")
+@app.get("/")
+def home():
+    return {"mensagem": "Olá mundo"}
 
+@app.get("/soma/{a}/{b}")
+def soma(a: int, b: int):
+    return {"resultado": a + b}
