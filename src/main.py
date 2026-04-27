@@ -5,5 +5,5 @@ app = FastAPI()
 
 @app.get("/foto")
 def get_foto():
-    return FileResponse("imagem/cafe.jpeg")
+    return FileResponse("../imagem/cafe.jpeg")
 
