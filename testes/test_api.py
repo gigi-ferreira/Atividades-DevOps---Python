@@ -3,12 +3,14 @@ from src.main import app
 
 client = TestClient(app)
 
-def test_home():
-    response = client.get("/")
+def test_gatinho_soninho():
+    response = client.get("/gatinho/soninho")
     assert response.status_code == 200
-    assert response.json() == {"mensagem": "Olá mundo"}
+    assert response.headers["content-type"].startswith("image/")
+    assert len(response.content) > 0
 
-def test_soma():
-    response = client.get("/soma/2/3")
+def test_gatinho_gatao():
+    response = client.get("/gatinho/gatao")
     assert response.status_code == 200
-    assert response.json() == {"resultado": 5}
+    assert response.headers["content-type"].startswith("image/")
+    assert len(response.content) > 0
